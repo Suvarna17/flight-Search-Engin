@@ -1,0 +1,55 @@
+<div class="container">
+  <br>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" class="ui form" [class.error]="!myForm.valid && myForm.touched">
+    <div class="space">
+      <input placeholder="Origin City" class="form-control" type="text" formControlName="origin" />
+      <div *ngIf="myForm.controls['origin'].errors?.required && myForm.controls['origin'].touched" class="text-danger">Origin
+        is required.
+      </div>
+    </div>
+    <div class="space">
+      <input placeholder="Destination City" class="form-control" type="text" formControlName="destination" />
+      <div *ngIf="myForm.controls['destination'].errors?.required  && myForm.controls['destination'].touched" class="text-danger">Destination
+        is required.
+      </div>
+    </div>
+    <div class="space"></div>
+    <div class="space,form-control" style="background-color:white">
+      <dp-date-picker class="date-picker" placeholder="Departure date" #dayPicker formControlName="departureDate"
+        [(ngModel)]="validationMinDate">
+      </dp-date-picker>
+    </div>
+    <div class="space"></div>
+    <div *ngIf="!isOneWay" class="space,form-control" style="background-color:white">
+      <dp-date-picker class="date-picker" placeholder="Return date" #returnDayPicker formControlName="returnDate"
+        [minDate]="validationMinDate">
+      </dp-date-picker>
+      <div style="background-color:slategrey" *ngIf="myForm.controls['returnDate'].errors?.minDate" class="text-danger">Return
+        date should be greater
+        than Departure date.
+      </div>
+    </div>
+
+    <div class="space">
+      <select class="form-control" #passanger formControlName="passanger" required>
+        <option selected value="">Passengers</option>
+        <option *ngFor="let passangerList of passangerLists" [ngValue]="passangerList">{{passangerList}}</option>
+      </select>
+    </div>
+    <div class="space"></div>
+    <div class="space">
+      <button class="btn btn-large  btn-responsive" style="background-image: linear-gradient(-90deg, rgba(0,219,221,1.00) 9%, #00AAAC 97% );color: white"
+        title="search details" [disabled]="!myForm.valid">Search
+      </button>
+    </div>
+  </form>
+  <br>
+</div>
+<br>
+<div class="rangepicker">
+  <label for="refine">Refine Flight Search</label>
+  <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" (userChangeStart)="onUserChangeStart($event)"
+    (userChange)="onUserChange($event)" (userChangeEnd)="onUserChangeEnd($event)">
+  </ng5-slider>
+
+</div>

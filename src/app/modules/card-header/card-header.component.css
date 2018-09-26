@@ -1,0 +1,16 @@
+.row{
+    border:1px solid black
+}
+.cHeader{
+    height:auto;
+    padding: 20px;
+    /* background-color: darkturquoise; */
+    background-image: linear-gradient(-90deg, #00AAAC 9%, rgba(0,219,221,1.00) 97%);
+}
+.cHeaderInner1{
+    font-size:1.5em;
+    vertical-align: middle;
+}
+.cHeaderInner2{
+    font-size:.9em;
+}

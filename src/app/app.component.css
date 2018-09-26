@@ -1,0 +1,41 @@
+.container{
+    /* width: 100%; */
+    /* height: 96vh; */
+    border: 2px solid black;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.header{
+    width: 100%;
+    /* border: 2px solid black; */
+    padding-left: 1%;
+    margin:0%;
+
+}
+.logo{
+  padding-top: 0.5%;
+  margin-top: 1%;  
+}
+.sidebar{
+    float: left;
+    border:1px solid black;
+}
+
+.row{
+    border:1px solid black;
+
+}
+
+.errormsg{
+    font-size: 1em;
+    color: red;
+    padding-top: 2%;
+}
+
+.tabs__tab.active {
+    /* background-color: #6fbbff !important; */
+    color: white;
+    background-color: darkcyan
+}
+

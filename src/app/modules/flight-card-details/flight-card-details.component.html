@@ -1,0 +1,50 @@
+<div class="row fcMain rounded bg-info text-white">
+    <div class="col fcInner">
+        <div class="grid grid-pad">
+            <div class="col-1-2">
+                <label for="name">{{flightDetails.price | currency:'INR'}}</label>
+            </div>
+            <div class="col-1-2">
+                <label class="lblbg" for="name">{{flightDetails.number | uppercase}}</label>
+            </div>
+            <div class="col-1-2">
+                <label class="lblsm" for="ft">{{flightDetails.from | uppercase}} >
+                    {{flightDetails.to | uppercase}}</label>
+            </div>
+            <div class="col-1-2">
+                <label class="lblsm" for="dt">Depart : {{flightDetails.depart_date| uppercase}}</label>
+            </div>
+            <div class="col-1-2">
+                <label class="lblsm" for="at">Arrive : {{flightDetails.arrive_date| uppercase}}</label>
+            </div>
+        </div>
+    </div>
+    <div class="col fcInner" *ngIf="!isOneWay">
+        <div class="grid grid-pad">
+            <div class="col-1-2 lblReturn">
+                <label class="lblbg" for="name">{{flightDetails.return_trip.number| uppercase}}</label>
+            </div>
+            <div class="col-1-2">
+                <label class="lblsm" for="ft">{{flightDetails.return_trip.from | uppercase}} >
+                    {{flightDetails.return_trip.to | uppercase}}</label>
+            </div>
+            <div class="col-1-2">
+                <label class="lblsm" for="dt">Depart : {{flightDetails.return_trip.depart_date| uppercase}}</label>
+            </div>
+            <div class="col-1-2">
+                <label class="lblsm" for="at">Arrive : {{flightDetails.return_trip.arrive_date| uppercase}}</label>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="grid grid-pad float-right">
+            <div class="col-1-2 airlineLogo">
+                <img src="../../assets/airindia.jpg" class="rounded" alt="Airline Logo.">
+            </div>
+            <div class="col-1-2">
+                <button class="btn" title="flight booking">Book this flight</button>
+            </div>
+        </div>
+    </div>
+</div>
+

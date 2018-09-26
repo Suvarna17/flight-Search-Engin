@@ -1,0 +1,40 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-1">
+      <img class="logo" src="../../assets/airplane.svg" alt="" />
+
+    </div>
+    <div class="col-md-11">
+      <div class="header">
+        <app-header></app-header>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="sidebar col-md-4">
+      <tabs>
+        <tab tabTitle="One way">
+          <app-left-panel (flightSearchInitiated)="onFlightSearchRequested($event)" [isOneWay]="true"></app-left-panel>
+        </tab>
+        <tab tabTitle="Return">
+          <app-left-panel (flightSearchInitiated)="onFlightSearchRequested($event)" [isOneWay]="false"></app-left-panel>
+
+        </tab>
+      </tabs>
+    </div>
+    <div class="col-md-8 main-content">
+      <app-card-header *ngIf="flightSearchResult?.length > 0" [currentSearchCriteria]="currentSearchdetails"></app-card-header>
+      <div>
+        <app-flight-card-details *ngFor="let item of flightSearchResult" [flightDetails]="item" [isOneWay]="currentSearchdetails.isOneWay"></app-flight-card-details>
+        <label class="errormsg" for="errormsg" *ngIf="message">{{message}}</label>
+
+      </div>
+    </div>
+  </div>
+
+
+</div>

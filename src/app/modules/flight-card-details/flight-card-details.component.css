@@ -1,0 +1,92 @@
+.fcMain{
+    height:auto;
+    margin-top: 10px;
+    margin-left: 1px;
+    margin-right: 1px; 
+}
+.fcInner{
+  font-size:1.5em;
+  float: left;
+}
+.lblsm{
+    font-size:0.6em;
+    float: left;
+    width: 100%;
+}
+.lblbg{
+    font-size:0.8em;
+    float: left; 
+    width: 100%;
+}
+.airlineLogo{
+    width: 130px;
+    height:130px;
+}
+.lblReturn{
+    margin-top: 45px;
+}
+
+img{
+border-style: none;
+height: 10vh;
+width: 10vw;
+padding-top: 6%;
+margin-top: 3%;
+
+}
+
+.btn{
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    /* background-color: darkturquoise; */
+    background-image: linear-gradient(-90deg, #00AAAC 9%, rgba(0,219,221,1.00) 97%);
+    color:white;
+    padding-bottom: 1%
+}
+
+
+@media all and (max-width:959px){
+
+    img{
+        /* height: 17vh; */
+        width: 15vw; 
+    }
+}
+
+@media all and (max-width:640px){
+
+    img{
+        border-style: none;
+        /* height: 17vh; */
+        width: 22vw;
+        padding-top: 6%;
+        margin-top: 3%;
+        
+        }
+
+}
+
+
+@media all and (max-width:320px){
+    img{
+        width: 28vw; 
+        /* margin-left: -119px */
+        }
+
+    /* .btn{
+        margin-top:-122px
+    } */
+}
